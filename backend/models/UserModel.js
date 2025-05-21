@@ -24,9 +24,7 @@ const User = db.define("users", {
   }
 }, {
   timestamps: true,
-  freezeTableName: true,
-  createdAt: 'createdat',   
-  updatedAt: 'updatedat'
+  freezeTableName: true
 });
 
 export default User;
