@@ -16,7 +16,7 @@ const allowedOrigins = [
   "http://localhost:5173",                 // saat development
   "http://localhost:3000",
   "http://localhost:3001",
-  "https://frontend-app.web.app",          // ganti ini sesuai URL Firebase Hosting kamu
+  "https://frontend-service-dot-b-10-451011.uc.r.appspot.com",          // ganti ini sesuai URL Firebase Hosting kamu
   "https://your-custom-domain.com"         // kalau pakai domain sendiri
 ];
 
