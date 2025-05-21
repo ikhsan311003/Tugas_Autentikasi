@@ -13,7 +13,8 @@ const app = express();
 
 // ✅ Daftar origin yang diperbolehkan untuk CORS
 const allowedOrigins = [
-  "https://frontend-service-dot-b-10-451011.uc.r.appspot.com"
+  "https://frontend-service-dot-b-10-451011.uc.r.appspot.com",
+  "http://localhost:3000",
 ];
 
 // ✅ Konfigurasi CORS
@@ -43,5 +44,5 @@ app.all("*", (req, res) => {
 });
 
 // ✅ Start server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
