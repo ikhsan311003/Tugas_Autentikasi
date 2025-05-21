@@ -22,7 +22,9 @@ const Admin = db.define("admin", {
   }
 }, {
   freezeTableName: true,
-  timestamps: true
+  timestamps: true,
+  createdAt: 'createdat',   
+  updatedAt: 'updatedat'
 });
 
 export default Admin;
