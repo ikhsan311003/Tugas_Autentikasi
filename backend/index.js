@@ -13,11 +13,7 @@ const app = express();
 
 // ✅ Daftar origin yang diperbolehkan untuk CORS
 const allowedOrigins = [
-  "http://localhost:5173",
-  "http://localhost:3000",
-  "http://localhost:3001",
-  "https://frontend-service-dot-b-10-451011.uc.r.appspot.com",
-  "https://your-custom-domain.com"
+  "https://frontend-service-dot-b-10-451011.uc.r.appspot.com"
 ];
 
 // ✅ Konfigurasi CORS
