@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 
 // Register Admin
 export const Register = async (req, res) => {
+  console.log("📥 Register Request:", req.body);
   const { username, password, confirm_password } = req.body;
 
   if (!username || !password || !confirm_password) {
