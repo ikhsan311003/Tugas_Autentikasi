@@ -11,16 +11,16 @@ dotenv.config();
 
 const app = express();
 
-// ✅ Gunakan environment untuk asal CORS
+// ✅ Daftar origin yang diperbolehkan untuk CORS
 const allowedOrigins = [
-  "http://localhost:5173",                 // saat development
+  "http://localhost:5173",
   "http://localhost:3000",
   "http://localhost:3001",
-  "https://frontend-service-dot-b-10-451011.uc.r.appspot.com",          // ganti ini sesuai URL Firebase Hosting kamu
-  "https://your-custom-domain.com"         // kalau pakai domain sendiri
+  "https://frontend-service-dot-b-10-451011.uc.r.appspot.com",
+  "https://your-custom-domain.com"
 ];
 
-// CORS configuration
+// ✅ Konfigurasi CORS
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin || allowedOrigins.includes(origin)) {
@@ -32,14 +32,20 @@ app.use(cors({
   credentials: true
 }));
 
+// ✅ Middleware
 app.use(cookieParser());
 app.use(express.json());
 
-// Routes
+// ✅ Gunakan semua routes
 app.use(UserRoute);
 app.use(NotesRoute);
 app.use(AdminRoute);
 
-// Start Server
+// ✅ Fallback jika route tidak ditemukan
+app.all("*", (req, res) => {
+  res.status(404).json({ message: "Route not found" });
+});
+
+// ✅ Start server
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

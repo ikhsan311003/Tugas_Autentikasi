@@ -27,10 +27,6 @@ router.post("/users", verifyToken, createUser);
 router.patch("/users/:id", verifyToken, updateUser);
 router.delete("/users/:id", verifyToken, deleteUser);
 
-// ❌ Fallback route
-router.all("*", (req, res) => {
-  res.status(404).json({ message: "Route not found" });
-});
 
 // ✅ Export default agar bisa di-import tanpa {}
 export default router;
